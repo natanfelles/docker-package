@@ -9,8 +9,8 @@ RUN apt-get update \
 	useradd -rm \
 		-d /home/developer \
 		-g root -G sudo \
-		-s /bin/bash \
 		-p $(openssl passwd -1 "password") \
+		-s /bin/bash \
 		-u 1000 developer
 COPY --chown=1000 home /home/developer
 USER developer
